@@ -3,7 +3,5 @@ axios.get(`https://api.happi.dev/v1/music?q=${document.getElementById('song_name
   let songData = res.data
   console.log(songData)
   document.getElementById('song_list').innerHTML = ''
-  // insert chris's work here
-  '
 })
 .catch(err => console.error(err))
