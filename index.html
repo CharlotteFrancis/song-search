@@ -11,7 +11,36 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <header></header>
+    <header class="container">
+        <section class="row">
+            <section class="col s1"></section>
+            <section class="col s10 my-center">
+                <!-- code goes here! -->
+                <h1>Song Search</h1>
+                <h4>Search the name of a song for some song details</h4>
+                <hr>
+                <!--start form  -->
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Song Name" id="song_name" type="text" class="validate">
+                          <!-- button -->
+                          <button class="btn waves-effect waves-light red" id="submit" type="submit" name="action">Submit</button>
+                        </div>
+                      </div>                
+                    </form>
+                </div>
+                <!--end form  -->
+                <div class="content">
+                    <ul id="song_list"></ul>
+                </div>
+
+
+            </section>
+            <section class="col s1"></section>
+        </section>
+    </header>
     
 
     <!-- materialize -->
