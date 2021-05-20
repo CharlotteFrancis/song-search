@@ -12,16 +12,20 @@ document.getElementById('submit').addEventListener('click', event =>{
           <h4>Title: ${songArray[i].track}</h4>
           <h5>Artist: ${songArray[i].artist}</h5>
           <h5>Album: ${songArray[i].album}</h5>
-          <div id = "lyrics"></div>
-          <hr>
           `
-          // axios.get(`https://api.happi.dev/v1/music/artists/${songArray[i].id_artist}/albums/${songArray[i].id_album}/tracks/${songArray[i].id_track}/lyrics?apikey=504db5Pqpbv1duKbtaQ1arufJJtRaPdIyHo7fbhGHMt945gUmpy7KvON`)
-          axios.get(`https://api.happi.dev/v1/music/artists/7776/albums/217164/tracks/3419373/lyrics?apikey=504db5Pqpbv1duKbtaQ1arufJJtRaPdIyHo7fbhGHMt945gUmpy7KvON`) 
+          axios.get(`https://api.happi.dev/v1/music/artists/${songArray[i].id_artist}/albums/${songArray[i].id_album}/tracks/${songArray[i].id_track}/lyrics?apikey=504db5Pqpbv1duKbtaQ1arufJJtRaPdIyHo7fbhGHMt945gUmpy7KvON`)
+          //axios.get(`https://api.happi.dev/v1/music/artists/7776/albums/217164/tracks/3419373/lyrics?apikey=504db5Pqpbv1duKbtaQ1arufJJtRaPdIyHo7fbhGHMt945gUmpy7KvON`) 
             .then(resp => {
               console.log('works')
               console.log(resp.data)
               let lyrics = resp.data.result.lyrics
               console.log(lyrics)
+              let songLyrics = document.createElement('div')
+              songLyrics.innerHTML = `
+              <p>${lyrics}</p>
+              <hr>
+              `
+              song.append(songLyrics)
             })
             .catch(err => console.error(err))
           document.getElementById('song_list').append(song)
@@ -34,16 +38,20 @@ document.getElementById('submit').addEventListener('click', event =>{
           <h4>Title: ${songArray[i].track}</h4>
           <h5>Artist: ${songArray[i].artist}</h5>
           <h5>Album: ${songArray[i].album}</h5>
-          <div id = "lyrics"></div>
-          <hr>
           `
           axios.get(`https://api.happi.dev/v1/music/artists/${songArray[i].id_artist}/albums/${songArray[i].id_album}/tracks/${songArray[i].id_track}/lyrics?apikey=504db5Pqpbv1duKbtaQ1arufJJtRaPdIyHo7fbhGHMt945gUmpy7KvON`)
           // axios.get(`https://api.happi.dev/v1/music/artists/7776/albums/217164/tracks/3419373/lyrics?apikey=504db5Pqpbv1duKbtaQ1arufJJtRaPdIyHo7fbhGHMt945gUmpy7KvON`) 
             .then(resp => {
               console.log('works')
               console.log(resp.data)
-              let lyrics = resp.data.result[i].lyrics
+              let lyrics = resp.data.result.lyrics
               console.log(lyrics)
+              let songLyrics = document.createElement('div')
+              songLyrics.innerHTML = `
+              <p>${lyrics}</p>
+              <hr>
+              `
+              song.append(songLyrics)
             })
             .catch(err => console.error(err))
 
@@ -52,14 +60,6 @@ document.getElementById('submit').addEventListener('click', event =>{
         console.log('doesnt work')
       }
       console.log(songArray)
-    
     })
     .catch(err => console.error(err))
-
 })
-
-
-
-
-
-
