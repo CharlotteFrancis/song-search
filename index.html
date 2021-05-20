@@ -4,25 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song Search</title>
+    <title>Document</title>
     <!-- materalize -->
+    <link rel="stylesheet" href="./assets/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-<form>
-    <p>
-        <label for="search">search</label>
-        <input type="text" name="search" id="search">
-    </p>
-    <p>
-        <button id="searchSong">Search Pokemon</button>
-    </p>
-</form>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Jakes version of the final code -->
+    <header class="container">
+        <section class="row">
+            <section class="col s1"></section>
+            <section class="col s10 my-center">
+                <!-- code goes here! -->
+                <h1>Song Search</h1>
+                <h4>Search the name of a song for some song details</h4>
+                <hr>
+                <!--start form  -->
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Song Name" id="song_name" type="text" class="validate">
+                          <!-- button -->
+                          <button class="btn waves-effect waves-light" id="submit" type="submit" name="action">Submit</button>
+                        </div>
+                      </div>                
+                    </form>
+                </div>
+                <!--end form  -->
+                <div class="content">
+                    <ul id="song_list"></ul>
+                </div>
+            </section>
+            <section class="col s1"></section>
+        </section>
+    </header>
+    
     <!-- materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/script.js"></script>
+    
 </body>
 </html>
